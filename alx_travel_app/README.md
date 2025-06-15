@@ -1,21 +1,19 @@
+# ALX Travel App API (alx_travel_app_0x01)
 
+## 🌍 Overview
 
-# Project Overview
+This Django project provides a RESTful API to manage travel listings and bookings. It supports CRUD operations and includes automatic documentation with Swagger.
 
-It focuses on:
+---
 
-- Designing and implementing database models for a travel booking system.
-- Serializing model data for RESTful APIs using Django REST Framework.
-- Populating the database with sample data using a custom seeder command.
+## 🔧 Setup
 
-The project simulates a simple travel platform, enabling users to view listings, make bookings, and leave reviews.
+```bash
+# Install dependencies
+pip install -r requirements.txt
 
+# Apply migrations
+python manage.py migrate
 
-
-# Features Implemented
-
--  Models: `Listing`, `Booking`, and `Review` with fields, relationships, and constraints.
--  Serializers: For `Listing` and `Booking` to support API endpoints.
--  Seeder Command: Populates the database with mock data for testing.
-
-
+# Run server
+python manage.py runserver

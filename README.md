@@ -1,19 +1,22 @@
-# ALX Travel App API (alx_travel_app_0x01)
+🚀 alx_travel_app_0x02
+ALX Backend Web Development – Django Travel Booking API with Chapa Payment Integration
 
-## 🌍 Overview
+📌 Project Description
+This project extends alx_travel_app_0x01 by integrating Chapa API for secure payment processing within a Django REST API environment.
 
-This Django project provides a RESTful API to manage travel listings and bookings. It supports CRUD operations and includes automatic documentation with Swagger.
+Users can:
+Create bookings for travel property listings.
+Initiate and complete payments securely via Chapa.
+Verify payment status and update booking/payment records automatically.
+Receive payment confirmation upon successful payment (via Celery in advanced stages).
 
----
+⚙️ Features
+✅ Django REST Framework API
+✅ JWT Authentication (if used)
+✅ CRUD operations on Listings, Bookings, Reviews
+✅ Chapa payment initiation and verification
+✅ Environment variables for sensitive keys
+✅ Ready for deployment with environment-based configurations
 
-## 🔧 Setup
-
-```bash
-# Install dependencies
-pip install -r requirements.txt
-
-# Apply migrations
-python manage.py migrate
-
-# Run server
-python manage.py runserver
+Credits
+Developed by Clifford TabuUnder ALX Backend Web Development Curriculum

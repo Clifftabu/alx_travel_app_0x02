@@ -63,4 +63,23 @@ class Review(models.Model):
         return f"Review {self.review_id} by {self.user.username} - {self.rating} stars"
 
 
+
+class Payment(models.Model):
+    STATUS_CHOICES = [
+        ("Pending", "Pending"),
+        ("Completed", "Completed"),
+        ("Failed", "Failed"),
+    ]
+
+    payment_id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    booking = models.ForeignKey(Booking, related_name="payments", on_delete=models.CASCADE)
+    user = models.ForeignKey(User, related_name="payments", on_delete=models.CASCADE)
+    amount = models.DecimalField(max_digits=10, decimal_places=2)
+    transaction_id = models.CharField(max_length=100, unique=True)
+    status = models.CharField(max_length=20, choices=STATUS_CHOICES, default="Pending")
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"Payment {self.transaction_id} - {self.status}"
+
 # Create your models here.
